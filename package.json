@@ -1,6 +1,6 @@
 {
-  "name": "jira-client",
-  "version": "8.2.2",
+  "name": "@nazarethk7/jira-client",
+  "version": "9.0.0",
   "description": "Wrapper for the JIRA API",
   "author": "Steven Surowiec <steven.surowiec@gmail.com>",
   "contributors": [
@@ -9,10 +9,10 @@
     "Matt Smith <mtscout6+node-jira@gmail.com>",
     "Anson Wayman <kanoyugoro+node-jira@gmail.com>"
   ],
-  "homepage": "http://github.com/jira-node/node-jira-client",
+  "homepage": "https://github.com/nazarethk/node-jira-client",
   "repository": {
     "type": "git",
-    "url": "http://github.com/jira-node/node-jira-client"
+    "url": "https://github.com/nazarethk/node-jira-client"
   },
   "engine": {
     "node": ">=10.0.0"
@@ -35,7 +35,9 @@
     "lint": "eslint ./",
     "test": "npm run lint && mocha --require @babel/register && npm run docs-build",
     "prepublishOnly": "npm run build && npm run docs-build",
-    "release": "release"
+    "release:patch": "npm version patch && npm run build && npm publish",
+    "release:minor": "npm version minor && npm run build && npm publish",
+    "release:major": "npm version major && npm run build && npm publish"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.0",
